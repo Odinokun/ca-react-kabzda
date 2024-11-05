@@ -1,27 +1,31 @@
 import { FC } from 'react';
 
-type PropsType = {
-  title: string;
+type AccordionPropsType = {
+  titleValue: string;
+  collapsed: boolean;
+};
+
+export const Accordion: FC<AccordionPropsType> = ({
+  titleValue,
+  collapsed,
+}) => {
+  return (
+    <div>
+      <AccordionTitle title={titleValue} />
+      {!collapsed ? <AccordionBody /> : null}
+    </div>
+  );
 };
 
 type AccordionTitlePropsType = {
   title: string;
 };
 
-type AccordionBodyPropsType = {};
-
-export const Accordion: FC<PropsType> = ({ title }) => {
-  return (
-    <div>
-      <AccordionTitle title={title} />
-      <AccordionBody />
-    </div>
-  );
-};
-
 const AccordionTitle: FC<AccordionTitlePropsType> = ({ title }) => {
   return <h2>{title}</h2>;
 };
+
+type AccordionBodyPropsType = {};
 
 export const AccordionBody: FC<AccordionBodyPropsType> = () => {
   return (
