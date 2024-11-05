@@ -1,16 +1,14 @@
 import { FC } from 'react';
+import { AccordionTitle } from './AccordionTitle';
+import { AccordionBody } from './AccordionBody';
 
 type PropsType = {};
 
 export const Accordion: FC<PropsType> = () => {
   return (
     <div>
-      <h3>Accordion</h3>
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
+      <AccordionTitle />
+      <AccordionBody />
     </div>
   );
 };
