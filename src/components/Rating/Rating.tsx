@@ -4,10 +4,6 @@ type PropsType = {
   value: 0 | 1 | 2 | 3 | 4 | 5;
 };
 
-type StarPropsType = {
-  selected: boolean;
-};
-
 export const Rating: FC<PropsType> = ({ value }) => {
   return (
     <div>
@@ -18,6 +14,10 @@ export const Rating: FC<PropsType> = ({ value }) => {
       <Star selected={false} />
     </div>
   );
+};
+
+type StarPropsType = {
+  selected: boolean;
 };
 
 const Star: FC<StarPropsType> = ({ selected }) => {
