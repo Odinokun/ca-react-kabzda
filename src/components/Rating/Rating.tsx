@@ -7,11 +7,11 @@ type PropsType = {
 export const Rating: FC<PropsType> = ({ value }) => {
   return (
     <div>
-      <Star selected={true} />
-      <Star selected={true} />
-      <Star selected={false} />
-      <Star selected={false} />
-      <Star selected={false} />
+      <Star selected={value > 0} />
+      <Star selected={value > 1} />
+      <Star selected={value > 2} />
+      <Star selected={value > 3} />
+      <Star selected={value > 4} />
     </div>
   );
 };
