@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import './App.css';
-import { Accordion } from './components/Accordion/Accordion';
-import { Rating } from './components/Rating/Rating';
+// import { Accordion } from './components/Accordion/Accordion';
+// import { Rating } from './components/Rating/Rating';
 import { OnOff } from './components/OnOff/OnOff';
 
 function App() {
   return (
     <div className='App'>
-      <PageTitle title='Accordions' />
+      {/* <PageTitle title='Accordions' />
       <Accordion titleValue='Menu' collapsed={true} />
       <Accordion titleValue='Users' collapsed={false} />
       <hr />
@@ -18,7 +18,7 @@ function App() {
       <Rating value={3} />
       <Rating value={4} />
       <Rating value={5} />
-      <hr />
+      <hr /> */}
       <PageTitle title='OnOff' />
       <OnOff isOn={true} />
       <br />
