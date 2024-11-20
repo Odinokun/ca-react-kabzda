@@ -21,15 +21,15 @@ export const OnOff: FC<PropsType> = ({ isOn, ...restProps }) => {
   };
 
   const onStyle: CSSProperties = {
-    backgroundColor: isOn ? 'green' : '',
+    backgroundColor: isOn ? 'green' : 'white',
   };
 
   const offStyle: CSSProperties = {
-    backgroundColor: !isOn ? 'red' : '',
+    backgroundColor: !isOn ? 'tomato' : 'white',
   };
 
   const indicatorStyle: CSSProperties = {
-    backgroundColor: isOn ? 'green' : 'red',
+    backgroundColor: isOn ? 'green' : 'tomato',
     borderRadius: '50%',
     marginLeft: '10px',
   };
