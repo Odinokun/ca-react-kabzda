@@ -1,16 +1,26 @@
 import { FC } from 'react';
 import './App.css';
-// import { Accordion } from './components/Accordion/Accordion';
+import { CtrlAccordion } from './components/Accordions/CtrlAccordion';
+import { UncAccordion } from './components/Accordions/UncAccordion';
 // import { Rating } from './components/Rating/Rating';
-import { OnOff } from './components/OnOff/OnOff';
+// import { OnOff } from './components/OnOff/OnOff';
 
 function App() {
   return (
     <div className='App'>
-      {/* <PageTitle title='Accordions' />
-      <Accordion titleValue='Menu' collapsed={true} />
-      <Accordion titleValue='Users' collapsed={false} />
+      <PageTitle title='Accordions' />
+      <CtrlAccordion
+        titleValue='Controlled accordion (closed)'
+        collapsed={true}
+      />
+      <CtrlAccordion
+        titleValue='Controlled accordion (opened)'
+        collapsed={false}
+      />
+      <UncAccordion titleValue='Uncontrolled accordion' />
       <hr />
+
+      {/* 
       <PageTitle title='Rating' />
       <Rating value={0} />
       <Rating value={1} />
@@ -19,10 +29,10 @@ function App() {
       <Rating value={4} />
       <Rating value={5} />
       <hr /> */}
-      <PageTitle title='OnOff' />
+      {/* <PageTitle title='OnOff' />
       <OnOff />
       <br />
-      <OnOff />
+      <OnOff /> */}
     </div>
   );
 }
