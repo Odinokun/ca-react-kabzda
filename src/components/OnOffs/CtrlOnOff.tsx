@@ -1,17 +1,12 @@
-import { FC, CSSProperties, useState } from 'react';
+import { FC, CSSProperties } from 'react';
 
-type PropsType = {};
+type PropsType = {
+  isOn: boolean;
+};
 
-export const OnOff: FC<PropsType> = () => {
-  const [isOn, setIsOn] = useState<boolean>(false);
-
-  const onClickHandler = () => {
-    setIsOn(!isOn);
-  };
-
+export const CtrlOnOff: FC<PropsType> = ({ isOn, ...restProps }) => {
   const wrapperStyle: CSSProperties = {
     display: 'flex',
-    // justifyContent: 'center',
   };
   const mainStyle: CSSProperties = {
     width: '40px',
@@ -36,12 +31,8 @@ export const OnOff: FC<PropsType> = () => {
 
   return (
     <div style={wrapperStyle}>
-      <span style={{ ...mainStyle, ...onStyle }} onClick={onClickHandler}>
-        on
-      </span>
-      <span style={{ ...mainStyle, ...offStyle }} onClick={onClickHandler}>
-        off
-      </span>
+      <span style={{ ...mainStyle, ...onStyle }}>on</span>
+      <span style={{ ...mainStyle, ...offStyle }}>off</span>
       <span style={{ ...mainStyle, ...indicatorStyle }}></span>
     </div>
   );

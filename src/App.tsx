@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import './App.css';
 import { CtrlAccordion } from './components/Accordions/CtrlAccordion';
 import { UncAccordion } from './components/Accordions/UncAccordion';
 import { CtrlRating } from './components/Ratings/CtrlRating';
 import { UncRating } from './components/Ratings/UncRating';
-// import { Rating } from './components/Rating/Rating';
-// import { OnOff } from './components/OnOff/OnOff';
+import { UncOnOff } from './components/OnOffs/UncOnOff';
+import { CtrlOnOff } from './components/OnOffs/CtrlOnOff';
+import './App.css';
 
 function App() {
   return (
@@ -21,17 +21,19 @@ function App() {
       />
       <UncAccordion titleValue='Uncontrolled accordion' />
       <hr />
+
       <PageTitle title='Ratings' />
+      <h4>Controlled rating</h4>
       <CtrlRating value={3} />
+      <h4>Uncontrolled rating</h4>
       <UncRating />
       <hr />
 
-      {/* 
-      <PageTitle title='OnOff' />
-    
-      <OnOff />
-      <br />
-      <OnOff /> */}
+      <PageTitle title='OnOffs' />
+      <h4>Uncontrolled onOff</h4>
+      <UncOnOff />
+      <h4>Controlled onOff</h4>
+      <CtrlOnOff isOn={true} />
     </div>
   );
 }
