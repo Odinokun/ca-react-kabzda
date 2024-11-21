@@ -2,6 +2,8 @@ import { FC } from 'react';
 import './App.css';
 import { CtrlAccordion } from './components/Accordions/CtrlAccordion';
 import { UncAccordion } from './components/Accordions/UncAccordion';
+import { CtrlRating } from './components/Ratings/CtrlRating';
+import { UncRating } from './components/Ratings/UncRating';
 // import { Rating } from './components/Rating/Rating';
 // import { OnOff } from './components/OnOff/OnOff';
 
@@ -19,17 +21,14 @@ function App() {
       />
       <UncAccordion titleValue='Uncontrolled accordion' />
       <hr />
+      <PageTitle title='Ratings' />
+      <CtrlRating value={3} />
+      <UncRating />
+      <hr />
 
       {/* 
-      <PageTitle title='Rating' />
-      <Rating value={0} />
-      <Rating value={1} />
-      <Rating value={2} />
-      <Rating value={3} />
-      <Rating value={4} />
-      <Rating value={5} />
-      <hr /> */}
-      {/* <PageTitle title='OnOff' />
+      <PageTitle title='OnOff' />
+    
       <OnOff />
       <br />
       <OnOff /> */}
@@ -42,7 +41,7 @@ type PageTitlePropsType = {
 };
 
 const PageTitle: FC<PageTitlePropsType> = ({ title }) => {
-  return <h2>{title}</h2>;
+  return <h3>{title}</h3>;
 };
 
 export default App;
