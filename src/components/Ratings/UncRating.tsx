@@ -11,7 +11,6 @@ export const UncRating: FC<PropsType> = () => {
 
   return (
     <>
-      <h4>Uncontrolled rating</h4>
       <div>
         <button onClick={() => onClickHandler(1)}>1</button>
         <button onClick={() => onClickHandler(2)}>2</button>
