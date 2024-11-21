@@ -20,9 +20,9 @@ function App() {
       <Rating value={5} />
       <hr /> */}
       <PageTitle title='OnOff' />
-      <OnOff isOn={true} />
+      <OnOff />
       <br />
-      <OnOff isOn={false} />
+      <OnOff />
     </div>
   );
 }

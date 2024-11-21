@@ -1,15 +1,18 @@
-import { FC, CSSProperties } from 'react';
+import { FC, CSSProperties, useState } from 'react';
 
-type PropsType = {
-  isOn: boolean;
-};
+type PropsType = {};
 
-export const OnOff: FC<PropsType> = ({ isOn, ...restProps }) => {
+export const OnOff: FC<PropsType> = () => {
+  const [isOn, setIsOn] = useState<boolean>(false);
+
+  const onClickHandler = () => {
+    setIsOn(!isOn);
+  };
+
   const wrapperStyle: CSSProperties = {
     display: 'flex',
     // justifyContent: 'center',
   };
-
   const mainStyle: CSSProperties = {
     width: '40px',
     height: '40px',
@@ -19,41 +22,27 @@ export const OnOff: FC<PropsType> = ({ isOn, ...restProps }) => {
     textAlign: 'center',
     border: '1px solid #000',
   };
-
   const onStyle: CSSProperties = {
     backgroundColor: isOn ? 'green' : 'white',
   };
-
   const offStyle: CSSProperties = {
     backgroundColor: !isOn ? 'tomato' : 'white',
   };
-
   const indicatorStyle: CSSProperties = {
-    backgroundColor: isOn ? 'green' : 'tomato',
     borderRadius: '50%',
     marginLeft: '10px',
+    backgroundColor: isOn ? 'green' : 'tomato',
   };
+
   return (
     <div style={wrapperStyle}>
-      <span style={{ ...mainStyle, ...onStyle }}>on</span>
-      <span style={{ ...mainStyle, ...offStyle }}>off</span>
+      <span style={{ ...mainStyle, ...onStyle }} onClick={onClickHandler}>
+        on
+      </span>
+      <span style={{ ...mainStyle, ...offStyle }} onClick={onClickHandler}>
+        off
+      </span>
       <span style={{ ...mainStyle, ...indicatorStyle }}></span>
     </div>
   );
 };
-
-//************************************************ */
-//************************************************ */
-//************************************************ */
-// export const OnOff: FC<PropsType> = ({ isOn, ...restProps }) => {
-//   return (
-//     <div className='on-off'>
-//       <span style={{ backgroundColor: isOn ? 'green' : '' }}>on</span>
-//       <span style={{ backgroundColor: !isOn ? 'red' : '' }}>off</span>
-//       <span
-//         className='circle'
-//         style={{ backgroundColor: isOn ? 'green' : 'red' }}
-//       ></span>
-//     </div>
-//   );
-// };
