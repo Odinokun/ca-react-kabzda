@@ -4,7 +4,7 @@ type PropsType = {
   value: 0 | 1 | 2 | 3 | 4 | 5;
 };
 
-export const Rating: FC<PropsType> = ({ value }) => {
+export const CtrlRating: FC<PropsType> = ({ value, ...restProps }) => {
   return (
     <div>
       <Star selected={value > 0} />
