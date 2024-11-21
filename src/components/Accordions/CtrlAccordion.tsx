@@ -23,7 +23,7 @@ type CtrlAccordionTitlePropsType = {
 };
 
 const CtrlAccordionTitle: FC<CtrlAccordionTitlePropsType> = ({ title }) => {
-  return <h3>{title}</h3>;
+  return <h4>{title}</h4>;
 };
 
 type CtrlAccordionBodyPropsType = {};
