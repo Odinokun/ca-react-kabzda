@@ -21,5 +21,5 @@ type StarPropsType = {
 };
 
 const Star: FC<StarPropsType> = ({ selected }) => {
-  return selected ? <b>star </b> : <>star </>;
+  return <span>{selected ? <b>star </b> : 'star '}</span>;
 };
