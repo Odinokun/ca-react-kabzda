@@ -1,4 +1,3 @@
-import { on } from 'events';
 import { FC, useState } from 'react';
 
 type PropsType = {};
@@ -19,7 +18,7 @@ export const UncRating: FC<PropsType> = () => {
 
 type StarPropsType = {
   selected: boolean;
-  value: number;
+  value: 1 | 2 | 3 | 4 | 5;
   setValue: (value: number) => void;
 };
 
