@@ -12,6 +12,7 @@ export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
 function App() {
   const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
   const [accCollapsed, setAccCollapsed] = useState<boolean>(false);
+  const [isOnOffVal, setIsOnOffVal] = useState<boolean>(false);
 
   return (
     <div className='App'>
@@ -23,19 +24,17 @@ function App() {
       />
       <UncAccordion titleValue='Uncontrolled accordion' />
       <hr />
-
       <PageTitle title='Ratings' />
       <h4>Controlled rating</h4>
       <CtrlRating value={ratingValue} setRatingValue={setRatingValue} />
       <h4>Uncontrolled rating</h4>
       <UncRating />
       <hr />
-
       <PageTitle title='OnOffs' />
       <h4>Uncontrolled onOff</h4>
-      <UncOnOff />
+      <UncOnOff onChange={setIsOnOffVal} /> {/* a little bullshit */}
       <h4>Controlled onOff</h4>
-      <CtrlOnOff isOn={true} />
+      <CtrlOnOff isOn={isOnOffVal} setIsOnOffVal={setIsOnOffVal} />
     </div>
   );
 }
