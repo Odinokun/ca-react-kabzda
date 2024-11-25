@@ -31,7 +31,10 @@ const Star: FC<StarPropsType> = ({
   const onClickHandler = () => setValue(value);
 
   return (
-    <span style={{ cursor: 'pointer' }} onClick={onClickHandler}>
+    <span
+      style={{ cursor: 'pointer', userSelect: 'none' }}
+      onClick={onClickHandler}
+    >
       {selected ? <b>star </b> : 'star '}
     </span>
   );

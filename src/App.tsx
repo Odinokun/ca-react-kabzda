@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { CtrlAccordion } from './components/Accordions/CtrlAccordion';
 import { UncAccordion } from './components/Accordions/UncAccordion';
 import { CtrlRating } from './components/Ratings/CtrlRating';
@@ -7,7 +7,11 @@ import { UncOnOff } from './components/OnOffs/UncOnOff';
 import { CtrlOnOff } from './components/OnOffs/CtrlOnOff';
 import './App.css';
 
+export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
+
 function App() {
+  const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+
   return (
     <div className='App'>
       <PageTitle title='Accordions' />
@@ -24,7 +28,7 @@ function App() {
 
       <PageTitle title='Ratings' />
       <h4>Controlled rating</h4>
-      <CtrlRating value={3} />
+      <CtrlRating value={ratingValue} setRatingValue={setRatingValue} />
       <h4>Uncontrolled rating</h4>
       <UncRating />
       <hr />
