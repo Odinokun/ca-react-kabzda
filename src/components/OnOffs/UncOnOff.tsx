@@ -20,6 +20,8 @@ export const UncOnOff: FC<PropsType> = () => {
     alignItems: 'center',
     textAlign: 'center',
     border: '1px solid #000',
+    cursor: 'pointer',
+    userSelect: 'none',
   };
   const onStyle: CSSProperties = {
     backgroundColor: isOn ? 'green' : 'white',
@@ -30,6 +32,7 @@ export const UncOnOff: FC<PropsType> = () => {
   const indicatorStyle: CSSProperties = {
     borderRadius: '50%',
     marginLeft: '10px',
+    pointerEvents: 'none',
     backgroundColor: isOn ? 'green' : 'tomato',
   };
 

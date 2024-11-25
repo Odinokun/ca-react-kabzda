@@ -12,6 +12,7 @@ export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
 function App() {
   const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
   const [accCollapsed, setAccCollapsed] = useState<boolean>(false);
+  const [isOnOffVal, setIsOnOffVal] = useState<boolean>(false);
 
   return (
     <div className='App'>
@@ -35,7 +36,7 @@ function App() {
       <h4>Uncontrolled onOff</h4>
       <UncOnOff />
       <h4>Controlled onOff</h4>
-      <CtrlOnOff isOn={true} />
+      <CtrlOnOff isOn={isOnOffVal} setIsOnOffVal={setIsOnOffVal} />
     </div>
   );
 }
