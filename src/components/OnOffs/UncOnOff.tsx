@@ -1,12 +1,19 @@
 import { FC, CSSProperties, useState } from 'react';
 
-type PropsType = {};
+type PropsType = {
+  onChange: (val: boolean) => void;
+};
 
-export const UncOnOff: FC<PropsType> = () => {
+export const UncOnOff: FC<PropsType> = ({ onChange, ...restProps }) => {
   const [isOn, setIsOn] = useState<boolean>(false);
 
-  const onClickHandler = () => {
+  const onChangeHandler = () => {
     setIsOn(!isOn);
+    onChange(true);
+  };
+  const offChangeHandler = () => {
+    setIsOn(!isOn);
+    onChange(false);
   };
 
   const wrapperStyle: CSSProperties = {
@@ -38,10 +45,10 @@ export const UncOnOff: FC<PropsType> = () => {
 
   return (
     <div style={wrapperStyle}>
-      <span style={{ ...mainStyle, ...onStyle }} onClick={onClickHandler}>
+      <span style={{ ...mainStyle, ...onStyle }} onClick={onChangeHandler}>
         on
       </span>
-      <span style={{ ...mainStyle, ...offStyle }} onClick={onClickHandler}>
+      <span style={{ ...mainStyle, ...offStyle }} onClick={offChangeHandler}>
         off
       </span>
       <span style={{ ...mainStyle, ...indicatorStyle }}></span>

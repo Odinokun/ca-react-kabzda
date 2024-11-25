@@ -24,17 +24,15 @@ function App() {
       />
       <UncAccordion titleValue='Uncontrolled accordion' />
       <hr />
-
       <PageTitle title='Ratings' />
       <h4>Controlled rating</h4>
       <CtrlRating value={ratingValue} setRatingValue={setRatingValue} />
       <h4>Uncontrolled rating</h4>
       <UncRating />
       <hr />
-
       <PageTitle title='OnOffs' />
       <h4>Uncontrolled onOff</h4>
-      <UncOnOff />
+      <UncOnOff onChange={setIsOnOffVal} /> {/* a little bullshit */}
       <h4>Controlled onOff</h4>
       <CtrlOnOff isOn={isOnOffVal} setIsOnOffVal={setIsOnOffVal} />
     </div>
