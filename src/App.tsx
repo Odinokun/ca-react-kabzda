@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { CtrlAccordion } from './components/Accordions/CtrlAccordion';
 import { UncAccordion } from './components/Accordions/UncAccordion';
 import { CtrlRating } from './components/Ratings/CtrlRating';
@@ -7,24 +7,26 @@ import { UncOnOff } from './components/OnOffs/UncOnOff';
 import { CtrlOnOff } from './components/OnOffs/CtrlOnOff';
 import './App.css';
 
+export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
+
 function App() {
+  const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+  const [accCollapsed, setAccCollapsed] = useState<boolean>(false);
+
   return (
     <div className='App'>
       <PageTitle title='Accordions' />
       <CtrlAccordion
-        titleValue='Controlled accordion (closed)'
-        collapsed={true}
-      />
-      <CtrlAccordion
-        titleValue='Controlled accordion (opened)'
-        collapsed={false}
+        titleValue='Controlled accordion'
+        collapsed={accCollapsed}
+        setAccCollapsed={setAccCollapsed}
       />
       <UncAccordion titleValue='Uncontrolled accordion' />
       <hr />
 
       <PageTitle title='Ratings' />
       <h4>Controlled rating</h4>
-      <CtrlRating value={3} />
+      <CtrlRating value={ratingValue} setRatingValue={setRatingValue} />
       <h4>Uncontrolled rating</h4>
       <UncRating />
       <hr />
